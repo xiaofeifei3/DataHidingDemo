@@ -85,7 +85,7 @@ public class ImageUtil {
      * @param plugin Reference to the plugin
      * @return Image data as byte array
      */
-    public static byte[] imageToByteArray(ImageHolder image, String imageFileName, MuStegoPlugin plugin) {
+    public static byte[] imageToByteArray(ImageHolder image, String imageFileName) {
         ByteArrayOutputStream barrOS = new ByteArrayOutputStream();
         String imageType = null;
 
@@ -427,11 +427,8 @@ public class ImageUtil {
     private static ImageHolder readImage(InputStream is) {
         try {
             Bitmap image = BitmapFactory.decodeStream(is);
-            Metadata metadata = ImageMetadataReader.readMetadata(is);
-            return new ImageHolder(image, metadata);
-        } catch (IOException e) {
-            return null;
-        } catch (ImageProcessingException e) {
+            return new ImageHolder(image, null);
+        } catch (Exception e) {
             return null;
         }
     }

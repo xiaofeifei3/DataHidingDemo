@@ -47,7 +47,6 @@ public class LSBPlugin extends DHImagePluginTemplate{
         LSBOutputStream lsbOS = null;
 
         try {
-            // Generate random image, if input image is not provided
             if (cover == null) {
                 numOfPixels = (int) (LSBDataHeader.getMaxHeaderSize() * 8 / 3.0);
                 numOfPixels += (int) (msg.length * 8 / (3.0 * 8));
@@ -55,11 +54,12 @@ public class LSBPlugin extends DHImagePluginTemplate{
             } else {
                 image = ImageUtil.byteArrayToImage(cover, coverFileName);
             }
+
             lsbOS = new LSBOutputStream(image, msg.length, msgFileName);
             lsbOS.write(msg);
             lsbOS.close();
 
-            return ImageUtil.imageToByteArray(lsbOS.getImage(), stegoFileName, this);
+            return ImageUtil.imageToByteArray(lsbOS.getImage(), stegoFileName);
         } catch (IOException ioEx) {
             return null;
         }

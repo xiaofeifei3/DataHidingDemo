@@ -21,6 +21,6 @@ public abstract class DHImagePluginTemplate extends DatahidingPlugin {
         coverImage = ImageUtil.byteArrayToImage(coverData, coverFileName);
         diffImage = ImageUtil.getDiffImage(stegoImage, coverImage);
 
-        return ImageUtil.imageToByteArray(diffImage, diffFileName, this);
+        return ImageUtil.imageToByteArray(diffImage, diffFileName);
     }
 }

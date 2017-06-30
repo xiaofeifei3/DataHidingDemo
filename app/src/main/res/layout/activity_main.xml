@@ -6,13 +6,53 @@
     android:layout_height="match_parent"
     tools:context="com.chenqihong.datahidingdemo.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:background="@null"
+        android:hint="输入需要隐藏的信息"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        android:id="@+id/editText"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/pickPhoto"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:text="隐藏信息到图片"
+        app:layout_constraintLeft_toRightOf="@+id/editText"
+        android:layout_marginLeft="13dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp" />
+    <Button
+        android:layout_width="369dp"
+        android:layout_height="53dp"
+        android:text="提取图片内的信息"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:id="@+id/pickInfo"
+        android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="86dp" />
+    <ImageView
+        android:id="@+id/showImage"
+        android:layout_width="367dp"
+        android:layout_height="357dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/pickInfo"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/showInfo"
+        android:layout_width="367dp"
+        android:layout_height="357dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/pickInfo"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

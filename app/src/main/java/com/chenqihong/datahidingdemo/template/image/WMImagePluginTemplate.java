@@ -20,6 +20,6 @@ public abstract class WMImagePluginTemplate extends WatermarkingPlugin {
         coverImage = ImageUtil.byteArrayToImage(coverData, coverFileName);
         diffImage = ImageUtil.getDiffImage(stegoImage, coverImage);
 
-        return ImageUtil.imageToByteArray(diffImage, diffFileName, this);
+        return ImageUtil.imageToByteArray(diffImage, diffFileName);
     }
 }
